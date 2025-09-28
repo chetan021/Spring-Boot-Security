@@ -49,6 +49,8 @@ public class WebSecurityConfig {
                         .defaultSuccessUrl("/")
                         .failureUrl("/login?error=true")
                         .permitAll())
+                .rememberMe(config -> config.key("123456")
+                        .tokenValiditySeconds(36000))
                 .logout(config -> config
                         .logoutUrl("/logout")
                         .logoutSuccessUrl("/login")
