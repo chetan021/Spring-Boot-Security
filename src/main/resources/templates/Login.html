@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Security Example</title>
+</head>
+<body>
+    <div th:if="${param.error}">
+        <p>Bad Credentials</p>
+    </div>
+    <div th:if="${param.logout}">You Logged Out</div>
+    <form th:action="@{/login}" method="post">
+        <div>
+            <h1>Sign In</h1>
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter name" name="username" id="username" required>
+
+            <label for="password">Username</label>
+            <input type="password" placeholder="Enter name" name="password" id="password" required>
+
+            <input type="submit" value="Sign In"/>
+
+        </div>
+    </form>
+</body>
+</html>
